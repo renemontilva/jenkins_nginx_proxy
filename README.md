@@ -36,4 +36,5 @@ docker-compose up
 ```
 
 ## Test it out
-Now connect to your browser with the following url: https://localhost
+default credentials in .htpawwd file is username: user1 and pass: user1
+Now connect to your browser with the following url: https://user1:user1@localhost
