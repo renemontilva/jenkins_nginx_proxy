@@ -1,0 +1,18 @@
+    upstream jenkins {
+    	  server jenkins:8080;
+    }
+
+    server {
+     listen 443 ssl;
+     ssl_certificate /etc/nginx/ssl/certs/proxy.crt;
+     ssl_certificate_key /etc/nginx/ssl/private/proxy.key;
+
+	 location / {
+      	  proxy_pass http://jenkins;
+          auth_basic "Webhook proxy Area";
+          auth_basic_user_file /etc/nginx/sites-available/.htpasswd;
+          # Do not forward Authorization header
+          proxy_set_header Authorization "";
+
+	}
+  }
