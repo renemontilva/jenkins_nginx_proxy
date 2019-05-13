@@ -10,7 +10,6 @@ nginx:
   ports:
     - "443:443"
   volumes:
-    - .:/users
     - ./site/:/etc/nginx/sites-available
     - ./ssl/:/etc/nginx/ssl
   links:
